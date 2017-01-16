@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <!-- HTTP 1.1 -->
+	<meta http-equiv="Cache-Control" content="no-store"/>
+	<!-- HTTP 1.0 -->
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<!-- Prevents caching at the Proxy Server -->
+	<meta http-equiv="Expires" content="0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	
+	<link rel="stylesheet" type="text/css" href="Ext/resources/css/ext-all.css"/>
+	<script type="text/javascript" src="Ext/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="Ext/ext-all.js"></script>
+	<script type="text/javascript">Ext.BLANK_IMAGE_URL = 'images/s.gif';</script>
+	
+	<script src="kindeditor/kindeditor.js" type="text/javascript"></script>
+	
+    <title>Communicourse</title>
+    
+</head>
+<body>
+<script type="text/javascript">
+	
+	function createXMLHttpRequest() {  
+    var xmlHttp;  
+    if (window.XMLHttpRequest) {  
+        xmlHttp = new XMLHttpRequest();  
+        if (xmlHttp.overrideMimeType)  
+            xmlHttp.overrideMimeType('text/xml');  
+    } else if (window.ActiveXObject) {  
+        try {  
+            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");  
+        } catch (e) {  
+            try {  
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");  
+            } catch (e) {  
+            }  
+        }  
+    }  
+    return xmlHttp;  
+}
+	
+        Ext.onReady(function () {
+            
+            Ext.QuickTips.init();
+            Ext.form.Field.prototype.msgTarget = 'side';
+
+            var chatContent = new Ext.Panel({		
+				id:"chatContent",
+                height: 400,
+                width: 700,
+				html: '<p>World!</p>',
+			    
+            });
+
+            var keeditor = new Ext.form.TextArea({
+                id: 'keeditor',
+                width: 700,
+                height: 200	
+            });
+			 
+            var form = new Ext.Panel({
+                frame: true,
+				width: 800,
+				height: 650,
+				renderTo: Ext.getBody(),
+                style: 'margin-top:0px',
+                items: [chatContent, keeditor],
+				buttons: [{ 
+					text: 'Send',
+					width: 80,
+				    height: 30,
+					listeners:{
+                     'click':function() {
+						 keeditor.sync;
+						 KE.html('keeditor', "");
+						 Ext.getCmp('chatContent').body.update('<p>test</p>');
+					     var url = "getNginxStatus";  
+                         xmlHttp.open("POST", url, true);  
+                         xmlHttp.onreadystatechange = getStatusBack;  
+                         xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;");  
+                         xmlHttp.send(document.getElementById('keeditor').value); }
+                      }
+				}],
+                listeners: {
+                    'render': function () {
+                        KE.show({
+                           id: 'keeditor',
+                            imageUploadJson: '/App_Ashx/Upload.ashx'
+                        });
+	                  //      KE.init('keeditor');
+			
+                      //  setTimeout("KE.create('keeditor');", 1000);
+						setTimeout("KE.create('keeditor');", 1000);
+					   }
+                       
+	            }       
+                
+            });            
+        });
+    </script>
+      
+</body>
+</html>

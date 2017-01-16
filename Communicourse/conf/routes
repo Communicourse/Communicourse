@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.UserController.index
+GET     /getUser                         controllers.UserController.getUser
+GET     /listAllChatgroup                      controllers.ChatgroupController.listAll
+POST    /add                        controllers.UserController.addUser
+POST    /login                       controllers.UserController.login()
+GET     /delete/:id                 controllers.UserController.deleteUser(id : Long)
+POST    /addChatgroup              controllers.ChatgroupController.addChatgroup
+GET     /deleteChatgroup/:idc               controllers.ChatgroupController.deleteChatgroup(idc : Long)
+GET     /exitChatgroup/:content   controllers.ChatgroupController.exitChatgroup(content:String)
+GET    /register                 controllers.UserController.register
+POST    /update_personalinfor      controllers.UserController.update_personalinfor
+POST    /update_password          controllers.UserController.update_password
+GET     /inpassword                controllers.UserController.in_password
+GET     /list_owner                controllers.ChatgroupController.list_owner
+GET     /list_members                controllers.ChatgroupController.list_members
+
+POST    /addMessage_text                    controllers.MessageController.addMessage_text
+#POST    /addMessage_file/:chat_group                  controllers.MessageController.addMessage_file(chat_group :String)
+#GET     /listAllMessage                      controllers.MessageController.listAll
+#GET     /download_file/:file_name                    controllers.MessageController.download_file(file_name :String)
+# Map static resources from the /public folder to the /assets URL path
+GET     /*file               controllers.Assets.versioned(path="/public", file: Asset)
+

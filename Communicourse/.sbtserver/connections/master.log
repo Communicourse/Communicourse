@@ -1,0 +1,16 @@
+New log file opened at Mon Jan 16 11:43:38 CET 2017 by 58479@dhcp04.cip.ifi.lmu.de
+Taking next connection to: 56281
+New client attempting to connect on port: 56282-56281
+  Address = /141.84.214.123:56281
+This client on port 56282 has uuid c5439701-3606-47e0-9af2-8f0767dc20df configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-c5439701-3606-47e0-9af2-8f0767dc20df
+Taking next connection to: 56281
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56281
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56281
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56281
