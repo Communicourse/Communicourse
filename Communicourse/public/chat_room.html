@@ -1,29 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Password Reset</title>
-<link href="stylesheets/style.css" rel="stylesheet" type="text/css">
-<script language="javascript" src="js/js.js"></script>
-</head>
-<body style="background-color:#FFFFFF">
-<div style="width:30%; margin: 0 auto; margin-top:25px; margin-left: 30px;">
-  <table class="table11" style="width: 800px;">
-    <tr>
-      <th style="padding:0 0 0 0; width: 15%; text-transform:none;">Group Name:</th>
-      <th style="padding:0 0 0 0; width: 33%; text-transform:none;">Group Description:</th>
-      <th style="padding:0 0 0 0; width: 35%; text-transform:none;">Group Members:</th>
-      <th style="padding:0 0 0 0; width: 17%; text-transform:none;">Group Operation:</th>
-    </tr>
+    <!-- HTTP 1.1 -->
+	<meta http-equiv="Cache-Control" content="no-store"/>
+	<!-- HTTP 1.0 -->
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<!-- Prevents caching at the Proxy Server -->
+	<meta http-equiv="Expires" content="0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	
+	<link rel="stylesheet" type="text/css" href="Ext/resources/css/ext-all.css"/>
+	<script type="text/javascript" src="Ext/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="Ext/ext-all.js"></script>
+	<script type="text/javascript">Ext.BLANK_IMAGE_URL = 'images/s.gif';</script>
+	
+	<script language="javascript" src="js/js.js"></script>
+	
+	<script charset="utf-8" src="kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+    <script >function inviteMember(){
+	
+	document.getElementById("centerFrame").src="invite_members.html";
+}</script>
     
-    <tr>
-      <td style="text-align:left;">group name 1</td>
-      <td style="text-align:left;">This is a group to test it.</td>
-      <td style="text-align:left;">Wentao,Robert,Jindong</td>
-      <td style="text-align:left;"><button style="width: 80px;background-color: gold;">Delete</button></td>
-    </tr>
-   
-  </table>
-</div>
+    <title>Communicourse</title>
+    
+</head>
+<body>
+      <script type="text/javascript" src="js/chat_editor.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+@(chatgroupForm: Form[model.ChatgroupFormData],chatgroups : Seq[model.Chatgroup])
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -22,6 +23,33 @@
     <div class="loading-indicator">
     </div>
 	<script language="javascript" src="js/menuManager.js"></script>
+    <script language="javascript">
+    
+        @for(chatgroup <- chatgroups){  
+           root1.appendChild(  new Ext.tree.TreeNode({
+                 id:'Group'+@chatgroup.groupName,
+                 icon:'images/user.gif',
+                 text:'Group'+@chatgroup.groupName,
+            listeners:{
+            'click':function(node, event) {
+                event.stopEvent();
+                var n = tab.getComponent(node.id);
+                var url = 'chat_room.html';
+                if (!n) { //判断是否已经打开该面板
+                    n = actionFn(node, url);
+                } else {
+                    tab.remove(n);
+                    n = tab.getComponent(node.id);
+                    n = actionFn(node, url);
+                }
+                tab.setActiveTab(n);
+            });
+        }
+    });
+            
+        }
+    </script>
+
     <div id="north">
         <span></span>
             <div height="20" class="api-title" style="height:90px">			

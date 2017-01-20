@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -14,7 +15,60 @@
 	<script type="text/javascript">Ext.BLANK_IMAGE_URL = 'images/s.gif';</script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/messages.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
-    <title>Communicourse</title>    
+    <title>Communicourse</title>  
+    <script language="javascript">
+		
+		function chatGroups(){
+		var chatGroups_root = new Ext.tree.TreeNode({
+        id:"root1",
+		collapsible :false,
+        text:"root1",
+       });
+	 var Group= new Ext.tree.TreeNode({
+        id:'Group',
+        icon:'images/user.gif',
+        text:'Group',
+        listeners:{
+            'click':function(node, event) {
+                event.stopEvent();
+                var n = tab.getComponent(node.id);
+                var url = 'chat_room.html';
+                if (!n) { //判断是否已经打开该面板
+                    n = actionFn(node, url);
+                } else {
+                    tab.remove(n);
+                    n = tab.getComponent(node.id);
+                    n = actionFn(node, url);
+                }
+                tab.setActiveTab(n);
+            }
+        }
+    });
+	chatGroups_root.appendChild(Group);
+		var Group2 = new Ext.tree.TreeNode({
+                 id:'Group2',
+                 icon:'images/user.gif',
+                 text:'Group2',
+            listeners:{
+            'click':function(node, event) {
+                event.stopEvent();
+                var n = tab.getComponent(node.id);
+                var url = 'chat_room.html';
+                if (!n) { //判断是否已经打开该面板
+                    n = actionFn(node, url);
+                } else {
+                    tab.remove(n);
+                    n = tab.getComponent(node.id);
+                    n = actionFn(node, url);
+                }
+                tab.setActiveTab(n);
+            }
+        }
+		});
+       chatGroups_root.appendChild(Group2);
+		
+		return chatGroups_root;  }  
+         </script>  
 </head>
 <body>
 <div id="loading-mask" style=""></div>
@@ -22,8 +76,12 @@
     <div class="loading-indicator">
     </div>
 	<script language="javascript" src="js/menuManager.js"></script>
+    <script language="javascript">
+		
+		
+         </script>
     <div id="north">
-        <span></span>
+        <span id="test"></span>
             <div height="20" class="api-title" style="height:90px">			
                 <img src="images/top.jpg" width="1400">
             </div>   

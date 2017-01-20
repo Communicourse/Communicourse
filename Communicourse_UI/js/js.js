@@ -1,3 +1,7 @@
+function inviteMember(){
+	document.getElementById("centerFrame").src="invite_members.html";
+}
+
 function jumpto(pagename) {
 window.location.href=pagename;
 }

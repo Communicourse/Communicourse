@@ -1,16 +1,58 @@
-New log file opened at Mon Jan 16 11:43:38 CET 2017 by 58479@dhcp04.cip.ifi.lmu.de
-Taking next connection to: 56281
-New client attempting to connect on port: 56282-56281
-  Address = /141.84.214.123:56281
-This client on port 56282 has uuid c5439701-3606-47e0-9af2-8f0767dc20df configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-c5439701-3606-47e0-9af2-8f0767dc20df
-Taking next connection to: 56281
+New log file opened at Fri Jan 20 21:33:52 CET 2017 by 24103@Jindongs-MacBook-Pro.local
+Taking next connection to: 61703
+New client attempting to connect on port: 61942-61703
+  Address = /192.168.0.100:61703
+This client on port 61942 has uuid ebb6751d-0cbe-490b-89fb-0b7021bf7f81 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-ebb6751d-0cbe-490b-89fb-0b7021bf7f81
+Taking next connection to: 61703
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56281
+Taking next connection to: 61703
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56281
+Taking next connection to: 61703
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56281
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 61703

@@ -8,7 +8,7 @@ var tab = new Ext.TabPanel({
     minTabWidth: 115,
     tabWidth:135,
     enableTabScroll:true,
-    html:'<iframe scrolling="auto" frameborder="0" width="100%" height="100%"></iframe>'
+    html:'<iframe id="centerFrame" scrolling="auto" frameborder="0" width="100%" height="100%"></iframe>'
 });
 
 
@@ -18,7 +18,7 @@ function actionFn(node, url) {
         'id':node.id,
         'title':node.text,
         closable:true,  //通过html载入目标页
-        html:'<iframe scrolling="auto" frameborder="0" width="100%" height="100%" src="' + url + '"></iframe>'
+        html:'<iframe id="centerFrame" scrolling="auto" frameborder="0" width="100%" height="100%" src="' + url + '"></iframe>'
     });
 }
 
@@ -134,12 +134,12 @@ Ext.onReady(function() {
 	var MyGroups= new Ext.tree.TreeNode({
         id:'MyGroups',
         icon:'images/group.gif',
-        text:'My Groups',
+        text:'My Groups&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
         listeners:{
             'click':function(node, event) {
                 event.stopEvent();
                 var n = tab.getComponent(node.id);
-                var url = 'list_owner';
+                var url = 'group_my.html';
                 if (!n) { //if the pannel is already opened.
                     n = actionFn(node, url);
                 } else {
@@ -154,12 +154,32 @@ Ext.onReady(function() {
 	var ParticipantGroups= new Ext.tree.TreeNode({
         id:'ParticipantGroups',
         icon:'images/group.gif',
-        text:'Participant Groups&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+        text:'Participant Groups&nbsp;&nbsp;',
         listeners:{
             'click':function(node, event) {
                 event.stopEvent();
                 var n = tab.getComponent(node.id);
-                var url = 'list_members';
+                var url = 'group_paticipant.html';
+                if (!n) { //if the pannel is already opened.
+                    n = actionFn(node, url);
+                } else {
+                    tab.remove(n);
+                    n = tab.getComponent(node.id);
+                    n = actionFn(node, url);
+                }
+                tab.setActiveTab(n);
+            }
+        }
+    });
+	var NewGroup= new Ext.tree.TreeNode({
+        id:'NewGroup',
+        icon:'images/group.gif',
+        text:'Create a new Group',
+        listeners:{
+            'click':function(node, event) {
+                event.stopEvent();
+                var n = tab.getComponent(node.id);
+                var url = 'group_create.html';
                 if (!n) { //if the pannel is already opened.
                     n = actionFn(node, url);
                 } else {
@@ -173,6 +193,7 @@ Ext.onReady(function() {
     });
 	root2.appendChild(MyGroups);
 	root2.appendChild(ParticipantGroups);
+	root2.appendChild(NewGroup);
     var tree2 = new Ext.tree.TreePanel({
 		renderTo:"tree2",
 		collapsible :false,
@@ -192,12 +213,12 @@ Ext.onReady(function() {
 	var Profile= new Ext.tree.TreeNode({
         id:'Profile',
         icon:'images/user.gif',
-        text:'Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+        text:'Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
         listeners:{
             'click':function(node, event) {
                 event.stopEvent();
                 var n = tab.getComponent(node.id);
-                var url = 'getUser';
+                var url = 'setting_profile.html';
                 if (!n) { //if the pannel is already opened.
                     n = actionFn(node, url);
                 } else {
@@ -212,12 +233,12 @@ Ext.onReady(function() {
 	var PasswordReset= new Ext.tree.TreeNode({
         id:'PasswordReset',
         icon:'images/key.gif',
-        text:'Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+        text:'Password',
         listeners:{
             'click':function(node, event) {
                 event.stopEvent();
                 var n = tab.getComponent(node.id);
-                var url = 'inpassword';
+                var url = 'setting_password_change.html';
                 if (!n) { //if the pannel is already opened.
                     n = actionFn(node, url);
                 } else {
@@ -232,7 +253,7 @@ Ext.onReady(function() {
 	var Logout= new Ext.tree.TreeNode({
         id:'Logout',
         icon:'images/logout.png',
-        text:'Log out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+        text:'Log out&nbsp;&nbsp;&nbsp;&nbsp;',
         listeners:{
             'click':function(node, event) {
                 event.stopEvent();
